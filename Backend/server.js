@@ -2,9 +2,18 @@ import express from "express"
 import cors from "cors";
 import { connectDB } from "./configuration/db.js";
 import foodRouter from "./routes/foodRoute.js";
+import userRouter from "./routes/userRoute.js";
+import "dotenv/config"
+import cartRouter from "./routes/cartRoute.js";
+import orderRouter from "./routes/orderRoute.js";
+import Razorpay from "razorpay"
 
 const app = express();
 const port = 4000;
+export const instance = new Razorpay({
+  key_id: process.env.RAZORPAY_API_KEY,
+  key_secret: process.env.RAZORPAY_API_SECRET,
+});
 
 // middleware
 app.use(express.json());
@@ -16,6 +25,10 @@ connectDB();
 //Api endpoint
 app.use("/api/food",foodRouter)
 app.use("/images",express.static('uploads'))
+app.use("/api/user",userRouter)
+app.use("/api/cart",cartRouter)
+app.use("/api/order",orderRouter)
+
 
 app.get("/", (req, res) => {
   res.send("API Working");
