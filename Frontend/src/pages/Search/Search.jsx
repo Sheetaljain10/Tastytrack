@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import "./Search.css";
 import { assets, food_list } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
@@ -36,7 +36,7 @@ const Search = () => {
           })
           .map((item) => {
             return (
-              <div className="food-item">
+              <div key={item._id} className="food-item">
                 <div className="food-item-img-container">
                   <img className="food-item-image" src={item.image} alt="" />
                   {!cartItems[item._id] ? (
