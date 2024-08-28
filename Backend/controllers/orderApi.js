@@ -16,6 +16,19 @@ const placeOrder = async (req, res) => {
 
     await userModel.findByIdAndUpdate(req.body.userId, { cartData: {} });
 
+    // const amount = req.body.items.reduce(
+    //   (total, item) => total + item.price * item.quantity * 100 * 80,
+    //   2 * 100 * 80 // Add delivery charges
+    // );
+
+    // const options = {
+    //   amount: amount, // Amount in smallest currency unit (paise)
+    //   currency: "INR",
+    //   receipt: newOrder._id.toString(),
+    // };
+
+    // const order = await instance.orders.create(options);
+
     const line_items = req.body.items.map((item) => ({
   price_data: {
     currency: "inr",
@@ -46,8 +59,8 @@ const placeOrder = async (req, res) => {
 // });
 
 // res.json({ success: true, session_url: session.url });
-res.json({ success: true });
-    
+res.json({success: true});    
+
   } catch (error) {
     console.log(error);
     res.json({ success: false, message: "Error" });

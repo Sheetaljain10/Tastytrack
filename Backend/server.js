@@ -6,14 +6,10 @@ import userRouter from "./routes/userRoute.js";
 import "dotenv/config"
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
-import Razorpay from "razorpay"
+// import Razorpay from "razorpay"
 
 const app = express();
 const port = 4000;
-export const instance = new Razorpay({
-  key_id: process.env.RAZORPAY_API_KEY,
-  key_secret: process.env.RAZORPAY_API_SECRET,
-});
 
 // middleware
 app.use(express.json());
@@ -38,4 +34,3 @@ app.listen(port, () => {
   console.log(`Server Started on http://localhost:${port}`);
 });
 
-// mongodb+srv://sheetaljain3618:<password>@cluster0.o8x9fal.mongodb.net/?
