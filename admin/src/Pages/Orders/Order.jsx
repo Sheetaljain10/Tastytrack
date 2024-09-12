@@ -3,7 +3,7 @@ import axios from "axios"
 import './Orders.css'
 import {toast} from "react-toastify"
 import { useEffect } from 'react';
-import assets from "../../assets/assets.js"
+import {assets} from "../../assets/assets.js"
 
 const Order = () => {
   const url = "http://localhost:4000"
