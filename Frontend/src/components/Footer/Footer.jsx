@@ -28,13 +28,13 @@ const Footer = () => {
         <div className="footer-content-right">
             <h2>GET IN TOUCH</h2>
             <ul>
-                <li>+91-9951221593</li>
-                <li><a href="#">hotelJanosa.com</a></li>
+                <li><a href='tel:+91-9951221593'>+91-9951221593</a></li>
+                <li><a href="#">Tastytrack.com</a></li>
             </ul>
         </div>
       </div>
       <hr />
-      <p className='footer-copyright'>Copyright 2024 © HotelJanosa.com - All Right Reserved.</p>
+      <p className='footer-copyright'>Copyright 2024 © Tastytrack.com - All Right Reserved.</p>
     </div>
   )
 }
