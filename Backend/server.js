@@ -13,7 +13,10 @@ const port = process.env.PORT || 4000;
 
 // middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: process.env.CLIENT_URL,
+  credentials: true
+}));
 
 //Connect to DB.
 connectDB();
@@ -31,6 +34,6 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server Started on http://localhost:${port}`);
+  console.log(`Server Started on port:${port}`);
 });
 
