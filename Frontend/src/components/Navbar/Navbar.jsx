@@ -26,16 +26,16 @@ const logout = () => {
 
   return (
     <div className="navbar">
-      <Link to="/foodorder">
+      <Link to="/">
         <img src={assets.logo} alt="" className="logo" />
       </Link>
       <ul className="navbar-menu">
         <Link
-          to="/foodorder"
+          to="/"
           onClick={() => setMenu("home")}
           className={menu === "home" ? "active" : ""}
         >
-          <a href="#">Home</a>
+          Home
         </Link>
         <a
           href="#explore-menu"
